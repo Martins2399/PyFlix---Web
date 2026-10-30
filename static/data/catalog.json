@@ -3,7 +3,7 @@
     "titulo": "Meu Vídeo Local (Static)",
     "descricao": "Vídeo e capa carregados diretamente da sua pasta local /static do projeto.",
     "categoria": "Meus Vídeos",
-    "imagem": "/static/images/sua_capa.jpg",
+    "imagem": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500",
     "video": "/static/videos/seu_video.mp4",
     "legenda": "/static/videos/legenda.vtt",
     "destaque": true
