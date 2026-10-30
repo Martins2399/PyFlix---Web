@@ -5,7 +5,6 @@ from datetime import timedelta
 app = Flask(__name__)
 app.secret_key = 'pyflix_chave_secreta_super_segura'
 
-# Configurar tempo de sessão para durar 30 dias caso o utilizador escolha "Lembrar-me"
 @app.before_request
 def make_session_permanent():
     session.permanent = True

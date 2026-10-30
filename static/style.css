@@ -76,7 +76,6 @@ header {
     transform: scale(1.05);
 }
 
-/* Hero Banner */
 .hero-banner {
     height: 65vh;
     background-size: cover;
@@ -207,7 +206,6 @@ header {
     font-weight: 600;
 }
 
-/* Player */
 .player-container {
     max-width: 950px;
     margin: 40px auto;
@@ -264,7 +262,6 @@ video {
     background: #4a4a4a;
 }
 
-/* Autenticação e Grupo do Olho da Senha */
 .auth-body {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                 url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=1600') no-repeat center center fixed;
@@ -312,7 +309,6 @@ video {
     background: #000;
 }
 
-/* Estilo do Input com o botão do Olho 👁️ */
 .password-group {
     position: relative;
     width: 100%;
@@ -373,7 +369,6 @@ video {
     text-decoration: underline;
 }
 
-/* Modal de Saída */
 .modal-overlay {
     position: fixed;
     top: 0;

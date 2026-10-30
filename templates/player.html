@@ -18,17 +18,18 @@
     </header>
 
     <div class="player-container">
-        <h1 id="titulo"></h1>
-        <p id="desc"></p>
+        <h1 id="titulo" style="font-size: 32px; margin-bottom: 10px; color: #fff;"></h1>
+        <p id="desc" style="font-size: 16px; color: #b3b3b3; line-height: 1.6; margin-bottom: 20px;"></p>
         
         <div class="audio-selector">
-            <span>🛡️ <strong>Conteúdo Protegido:</strong> O download deste vídeo está desativado por razões de direitos autorais da plataforma.</span>
+            <span>🛡️ <strong>Proteção de Direitos:</strong> O download deste vídeo está bloqueado. Desfrute da reprodução em alta definição e ecrã inteiro.</span>
         </div>
 
-        <!-- Video tag com controles mas sem controle de download nativo cru -->
-        <video id="meu-video" controls controlsList="nodownload noplaybackrate" disablePictureInPicture autoplay>
-            Seu navegador não suporta a tag de vídeo.
-        </video>
+        <div class="video-box-wrapper">
+            <video id="meu-video" controls controlsList="nodownload noplaybackrate" disablePictureInPicture autoplay>
+                Seu navegador não suporta a tag de vídeo.
+            </video>
+        </div>
         
         <div>
             <a href="/" class="back-btn">Voltar ao Catálogo</a>
@@ -41,13 +42,14 @@
         const desc = params.get("desc");
         const videoUrl = params.get("video");
 
-        document.getElementById("titulo").textContent = titulo;
-        document.getElementById("desc").textContent = desc;
+        document.getElementById("titulo").textContent = titulo || "Título Indisponível";
+        document.getElementById("desc").textContent = desc || "Sem descrição detalhada para este título.";
 
         const videoElement = document.getElementById("meu-video");
-        videoElement.src = videoUrl;
+        if (videoUrl) {
+            videoElement.src = videoUrl;
+        }
 
-        // Bloqueio de inspeção e atalhos de salvamento
         function bloquearAtalhos(e) {
             if (e.key === "F12" || (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || (e.ctrlKey && e.key === "s")) {
                 alert("Ação protegida e restrita pelo sistema PyFlix.");
