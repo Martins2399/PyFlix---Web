@@ -1,45 +1,63 @@
 [
   {
-    "titulo": "Meu Vídeo Local (Static)",
-    "descricao": "Vídeo e capa carregados diretamente da sua pasta local /static do projeto.",
-    "categoria": "Meus Vídeos",
-    "imagem": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500",
+    "titulo": "A 5ª Onda",
+    "descricao": "Quatro ondas de ataques mortais dizimaram grande parte da Terra. Na aurora da 5ª onda, Cassie tenta salvar o seu irmão num mundo de terror e desconfiança.",
+    "categoria": "Meus Vídeos e Ficheiros Locais",
+    "imagem": "/static/images/a-5-onda.webp",
     "video": "/static/videos/seu_video.mp4",
     "legenda": "/static/videos/legenda.vtt",
     "destaque": true
+  },
+  {
+    "titulo": "Animais Fantásticos: Os Crimes de Grindelwald",
+    "descricao": "As aventuras mágicas do magizoologista Newt Scamander na luta contra o bruxo das trevas Gellert Grindelwald.",
+    "categoria": "Meus Vídeos e Ficheiros Locais",
+    "imagem": "/static/images/animais-fantasticos.webp",
+    "video": "/static/videos/seu_video.mp4",
+    "legenda": "",
+    "destaque": true
+  },
+  {
+    "titulo": "Terminator 7",
+    "descricao": "Uma nova batalha épica pelo futuro da humanidade contra máquinas impiedosas e tecnologia avançada.",
+    "categoria": "Meus Vídeos e Ficheiros Locais",
+    "imagem": "/static/images/exterminador_7.webp",
+    "video": "/static/videos/seu_video.mp4",
+    "legenda": "",
+    "destaque": false
+  },
+  {
+    "titulo": "A Maldição da Múmia",
+    "descricao": "Forças ancestrais e segredos enterrados há milénios despertam para aterrorizar os exploradores.",
+    "categoria": "Meus Vídeos e Ficheiros Locais",
+    "imagem": "/static/images/maldicao-da-mumia.webp",
+    "video": "/static/videos/seu_video.mp4",
+    "legenda": "",
+    "destaque": false
+  },
+  {
+    "titulo": "Sim Senhor",
+    "descricao": "Um homem comum decide aceitar e dizer 'sim' a todas as oportunidades e desafios que aparecem na sua vida.",
+    "categoria": "Comédia",
+    "imagem": "/static/images/sim-senhor.webp",
+    "video": "/static/videos/seu_video.mp4",
+    "legenda": "",
+    "destaque": false
+  },
+  {
+    "titulo": "Terror no Rio",
+    "descricao": "Mergulhadores enfrentam perigos mortais e criaturas implacáveis nas profundezas das águas.",
+    "categoria": "Terror e Suspense",
+    "imagem": "/static/images/terror-rio.webp",
+    "video": "/static/videos/seu_video.mp4",
+    "legenda": "",
+    "destaque": false
   },
   {
     "titulo": "Cosmos: O Legado do Espaço",
     "descricao": "Uma jornada fascinante pelos mistérios do universo, estrelas e da ciência moderna.",
     "categoria": "Documentários",
     "imagem": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
-    "legenda": "",
-    "destaque": true
-  },
-  {
-    "titulo": "O Segredo das Profundezas",
-    "descricao": "Documentário exclusivo revelando os mistérios das fossas oceânicas e a vida marinha.",
-    "categoria": "Documentários",
-    "imagem": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
-    "legenda": "",
-    "destaque": false
-  },
-  {
-    "titulo": "Planeta Terra em Foco",
-    "descricao": "Documentário incrível sobre a vida selvagem, florestas tropicais e os biomas do nosso planeta.",
-    "categoria": "Documentários",
-    "imagem": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
-    "legenda": "",
-    "destaque": false
-  },
-  {
-    "titulo": "Cyberpunk Chronicles",
-    "descricao": "Aventura alucinante nas ruas de uma megalópole iluminada por neon e alta tecnologia.",
-    "categoria": "Ação",
-    "imagem": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
     "legenda": "",
     "destaque": false
