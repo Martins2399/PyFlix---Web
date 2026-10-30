@@ -1,7 +1,7 @@
 [
   {
     "titulo": "Cosmos: O Legado do Espaço",
-    "descricao": "Uma jornada fascinante pelos mistérios do universo, estrelas e da ciência moderna.",
+    "descricao": "Uma jornada fascinante pelos mistérios do universo, estrelas e da ciência moderna. Explore a imensidão do cosmos e os segredos que desafiam a nossa imaginação.",
     "categoria": "Documentários",
     "imagem": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
@@ -9,8 +9,8 @@
     "destaque": true
   },
   {
-    "titulo": "Mistérios do Cosmos (Local)",
-    "descricao": "Documentário especial carregado diretamente a partir dos ficheiros locais da sua pasta static.",
+    "titulo": "O Segredo das Profundezas (Local)",
+    "descricao": "Documentário exclusivo carregado diretamente da sua pasta local, revelando os mistérios das fossas oceânicas e a vida marinha.",
     "categoria": "Documentários",
     "imagem": "/static/images/sua_capa.jpg",
     "video": "/static/videos/seu_video.mp4",
@@ -19,7 +19,7 @@
   },
   {
     "titulo": "Planeta Terra em Foco",
-    "descricao": "Documentário incrível sobre a vida selvagem, florestas e os biomas do nosso planeta.",
+    "descricao": "Documentário incrível sobre a vida selvagem, florestas tropicais e os biomas mais exuberantes do nosso planeta.",
     "categoria": "Documentários",
     "imagem": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
@@ -27,30 +27,12 @@
     "destaque": false
   },
   {
-    "titulo": "Exterminador do Futuro",
-    "descricao": "Clássico de ação e ficção científica futurista sobre o destino da humanidade.",
-    "categoria": "Ação",
-    "imagem": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
-    "legenda": "",
-    "destaque": false
-  },
-  {
     "titulo": "Cyberpunk Chronicles",
-    "descricao": "Aventura alucinante nas ruas de uma megalópole iluminada por neon e alta tecnologia.",
+    "descricao": "Aventura alucinante nas ruas de uma megalópole iluminada por neon, tecnologia de ponta e conspirações cibernéticas.",
     "categoria": "Ação",
     "imagem": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
     "legenda": "",
     "destaque": true
-  },
-  {
-    "titulo": "Stranger Séries",
-    "descricao": "Mistérios sobrenaturais, investigações intensas e segredos governamentais nos anos 80.",
-    "categoria": "Séries",
-    "imagem": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
-    "legenda": "",
-    "destaque": false
   }
 ]
