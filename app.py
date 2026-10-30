@@ -52,6 +52,11 @@ def login():
             
     return render_template('login.html')
 
+@app.route('/visitante')
+def visitante():
+    session['usuario'] = "Visitante"
+    return redirect(url_for('index'))
+
 @app.route('/cadastro', methods=['GET', 'POST'])
 def cadastro():
     if request.method == 'POST':
