@@ -5,6 +5,16 @@
     "categoria": "Documentários",
     "imagem": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "legenda": "",
+    "destaque": true
+  },
+  {
+    "titulo": "Mistérios do Cosmos (Local)",
+    "descricao": "Documentário especial carregado diretamente a partir dos ficheiros locais da sua pasta static.",
+    "categoria": "Documentários",
+    "imagem": "/static/images/sua_capa.jpg",
+    "video": "/static/videos/seu_video.mp4",
+    "legenda": "/static/videos/legenda.vtt",
     "destaque": true
   },
   {
@@ -13,15 +23,8 @@
     "categoria": "Documentários",
     "imagem": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "legenda": "",
     "destaque": false
-  },
-  {
-    "titulo": "Mistérios do Oceano Profundo",
-    "descricao": "Explore as fossas abissais e as criaturas mais misteriosas que habitam o fundo do mar.",
-    "categoria": "Documentários",
-    "imagem": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
-    "destaque": true
   },
   {
     "titulo": "Exterminador do Futuro",
@@ -29,6 +32,7 @@
     "categoria": "Ação",
     "imagem": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "legenda": "",
     "destaque": false
   },
   {
@@ -37,15 +41,8 @@
     "categoria": "Ação",
     "imagem": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "legenda": "",
     "destaque": true
-  },
-  {
-    "titulo": "Velocidade Extrema",
-    "descricao": "Corridas clandestinas e muita adrenalina sob quatro rodas no limite da lei.",
-    "categoria": "Ação",
-    "imagem": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
-    "destaque": false
   },
   {
     "titulo": "Stranger Séries",
@@ -53,22 +50,7 @@
     "categoria": "Séries",
     "imagem": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
-    "destaque": false
-  },
-  {
-    "titulo": "O Último Hacker",
-    "descricao": "Uma série eletrizante sobre espionagem cibernética e segurança de dados globais.",
-    "categoria": "Séries",
-    "imagem": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
-    "destaque": false
-  },
-  {
-    "titulo": "Rir Para Não Chorar",
-    "descricao": "Comédia imperdível e cheia de gargalhadas para toda a família.",
-    "categoria": "Comédia",
-    "imagem": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "legenda": "",
     "destaque": false
   }
 ]

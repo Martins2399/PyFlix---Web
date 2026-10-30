@@ -41,6 +41,8 @@
 
         <div class="video-box-wrapper">
             <video id="meu-video" controls controlsList="nodownload" autoplay>
+                <source id="videoSource" src="" type="video/mp4">
+                <track id="videoTrack" kind="subtitles" srclang="pt" label="Português">
                 Seu navegador não suporta a tag de vídeo.
             </video>
         </div>
@@ -55,14 +57,27 @@
         const titulo = params.get("titulo");
         const desc = params.get("desc");
         const videoUrl = params.get("video");
+        const legendaUrl = params.get("legenda");
 
         document.getElementById("titulo").textContent = titulo || "Título Indisponível";
         document.getElementById("desc").textContent = desc || "Sem descrição detalhada disponível para este título.";
 
         const videoElement = document.getElementById("meu-video");
+        const videoSource = document.getElementById("videoSource");
+        const videoTrack = document.getElementById("videoTrack");
+
         if (videoUrl) {
-            videoElement.src = videoUrl;
+            videoSource.src = videoUrl;
         }
+
+        if (legendaUrl && legendaUrl.trim() !== "") {
+            videoTrack.src = legendaUrl;
+            videoTrack.default = true;
+        } else {
+            videoTrack.remove();
+        }
+
+        videoElement.load();
 
         function mudarVelocidade() {
             const vel = document.getElementById("selectVelocidade").value;

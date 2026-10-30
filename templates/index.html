@@ -86,7 +86,8 @@
                 const params = new URLSearchParams({
                     titulo: filme.titulo,
                     desc: filme.descricao,
-                    video: filme.video
+                    video: filme.video,
+                    legenda: filme.legenda || ''
                 });
                 window.location.href = `/player?${params.toString()}`;
             };
@@ -128,7 +129,8 @@
                         const params = new URLSearchParams({
                             titulo: filme.titulo,
                             desc: filme.descricao,
-                            video: filme.video
+                            video: filme.video,
+                            legenda: filme.legenda || ''
                         });
                         window.location.href = `/player?${params.toString()}`;
                     });
