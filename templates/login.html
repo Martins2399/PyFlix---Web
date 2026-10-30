@@ -9,7 +9,9 @@
     <div class="auth-container">
         <h1>PyFlix</h1>
         <h2>Entrar</h2>
-        {% if erro %}<p style="color: #e50914; margin-bottom: 15px; font-size: 14px;">{{ erro }}</p>{% endif %}
+        {% if erro %}
+            <p style="color: #e50914; margin-bottom: 15px; font-size: 14px;">{{ erro }}</p>
+        {% endif %}
         <form method="POST">
             <input type="email" name="email" placeholder="E-mail" required class="auth-input">
             <input type="password" name="senha" placeholder="Senha" required class="auth-input">
