@@ -69,7 +69,7 @@ def cadastro():
             session['usuario'] = nome
             return redirect(url_for('index'))
         except sqlite3.IntegrityError:
-            return render_template('cadastro.html', erro="Este e-mail já está cadastrado.")
+            return render_template('cadastro.html', erro="Este e-mail já está cadastrado no sistema.")
         
     return render_template('cadastro.html')
 

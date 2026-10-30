@@ -70,29 +70,5 @@
     "imagem": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
     "destaque": false
-  },
-  {
-    "titulo": "Férias Frustradas no Espaço",
-    "descricao": "Uma viagem de turismo espacial que deu completamente errado de forma hilária.",
-    "categoria": "Comédia",
-    "imagem": "https://images.unsplash.com/photo-1517976487742-f9e9d8416c82?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
-    "destaque": false
-  },
-  {
-    "titulo": "Horror na Neblina",
-    "descricao": "Um grupo de viajantes fica preso numa cidade envolta por uma névoa mortal.",
-    "categoria": "Terror e Suspense",
-    "imagem": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
-    "destaque": false
-  },
-  {
-    "titulo": "A Casa Silenciosa",
-    "descricao": "Fenómenos inexplicáveis começam a assombrar uma antiga mansão isolada.",
-    "categoria": "Terror e Suspense",
-    "imagem": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
-    "destaque": false
   }
 ]

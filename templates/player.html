@@ -10,7 +10,7 @@
 
     <header>
         <div class="header-left">
-            <h1>PYFLIX</h1>
+            <a href="/" style="text-decoration: none;"><h1>PYFLIX</h1></a>
         </div>
         <div class="header-right">
             <a href="/" class="logout-btn" style="text-decoration: none;">Voltar ao Início</a>
@@ -18,15 +18,29 @@
     </header>
 
     <div class="player-container">
-        <h1 id="titulo" style="font-size: 32px; margin-bottom: 10px; color: #fff;"></h1>
-        <p id="desc" style="font-size: 16px; color: #b3b3b3; line-height: 1.6; margin-bottom: 20px;"></p>
+        <h1 id="titulo" style="font-size: 30px; margin-bottom: 10px; color: #fff;"></h1>
+        <p id="desc" style="font-size: 15px; color: #b3b3b3; line-height: 1.5; margin-bottom: 20px;"></p>
         
-        <div class="audio-selector">
-            <span>🛡️ <strong>Proteção de Direitos:</strong> O download deste vídeo está bloqueado. Desfrute da reprodução em alta definição e ecrã inteiro.</span>
+        <div class="audio-selector" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <span>🛡️ <strong>Player Seguro:</strong> Download desativado.</span>
+            
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <label>Velocidade: 
+                    <select id="selectVelocidade" onchange="mudarVelocidade()" style="background: #111; color: #fff; border: 1px solid #444; padding: 4px 8px; border-radius: 4px; cursor: pointer;">
+                        <option value="0.5">0.5x</option>
+                        <option value="1.0" selected>1.0x (Normal)</option>
+                        <option value="1.25">1.25x</option>
+                        <option value="1.5">1.5x</option>
+                        <option value="2.0">2.0x</option>
+                    </select>
+                </label>
+
+                <button onclick="alternarPip()" style="background: #e50914; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: bold;">🖥️ Modo Pop-up (PiP)</button>
+            </div>
         </div>
 
         <div class="video-box-wrapper">
-            <video id="meu-video" controls controlsList="nodownload noplaybackrate" disablePictureInPicture autoplay>
+            <video id="meu-video" controls controlsList="nodownload" autoplay>
                 Seu navegador não suporta a tag de vídeo.
             </video>
         </div>
@@ -43,11 +57,30 @@
         const videoUrl = params.get("video");
 
         document.getElementById("titulo").textContent = titulo || "Título Indisponível";
-        document.getElementById("desc").textContent = desc || "Sem descrição detalhada para este título.";
+        document.getElementById("desc").textContent = desc || "Sem descrição detalhada disponível para este título.";
 
         const videoElement = document.getElementById("meu-video");
         if (videoUrl) {
             videoElement.src = videoUrl;
+        }
+
+        function mudarVelocidade() {
+            const vel = document.getElementById("selectVelocidade").value;
+            videoElement.playbackRate = parseFloat(vel);
+        }
+
+        async function alternarPip() {
+            try {
+                if (document.pictureInPictureElement) {
+                    await document.exitPictureInPicture();
+                } else if (document.pictureInPictureEnabled) {
+                    await videoElement.requestPictureInPicture();
+                } else {
+                    alert("O seu navegador não suporta o modo Pop-up (PiP).");
+                }
+            } catch (error) {
+                console.error("Erro ao alternar o modo Pop-up:", error);
+            }
         }
 
         function bloquearAtalhos(e) {
