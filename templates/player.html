@@ -19,14 +19,12 @@
 
     <div class="player-container">
         <h1 id="titulo"></h1>
-        <p id="desc" style="color: #aaa; margin-bottom: 15px;"></p>
+        <p id="desc"></p>
         
-        <!-- Aviso sobre Legendas/Tradução do YouTube -->
         <div class="audio-selector">
-            <span>💡 <strong>Dica de Áudio/Legenda:</strong> Utilize as configurações do player do YouTube abaixo para ativar legendas ou tradução automática para Português/Inglês.</span>
+            <span>💡 <strong>Opção de Legenda/Áudio:</strong> Utilize as configurações do player abaixo para ativar legendas ou tradução automática.</span>
         </div>
 
-        <!-- Player do YouTube Integrado (Bloqueia Download nativamente) -->
         <div class="video-wrapper">
             <iframe id="youtube-player" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -45,7 +43,6 @@
         document.getElementById("titulo").textContent = titulo;
         document.getElementById("desc").textContent = desc;
 
-        // Configura a URL do iframe do YouTube com autoplay e controles limpos
         const iframe = document.getElementById("youtube-player");
         iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&modestbranding=1&rel=0`;
     </script>
