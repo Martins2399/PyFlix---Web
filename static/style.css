@@ -1,396 +1,43 @@
-/* ==========================================
-   PYFLIX - ESTILO NETFLIX PREMIUM
-   ========================================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-body {
-    background-color: #141414;
-    color: #ffffff;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-/* --- CABEÇALHO --- */
+/* Ajustes do Header com Barra de Pesquisa */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    padding: 15px 40px;
+    background-color: #141414;
+    position: sticky;
+    top: 0;
     z-index: 1000;
+    border-bottom: 1px solid #222;
 }
 
-header h1 {
+.header-left h1 {
     color: #e50914;
-    font-size: 32px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.user-perfil-box {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    font-size: 15px;
-    color: #e5e5e5;
-}
-
-.logout-btn {
-    background-color: #e50914;
-    color: #ffffff;
-    padding: 8px 18px;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 14px;
-    transition: background-color 0.2s, transform 0.2s;
-}
-
-.logout-btn:hover {
-    background-color: #f40612;
-    transform: scale(1.05);
-}
-
-/* --- BANNER DE DESTAQUE (HERO) --- */
-.hero-banner {
-    height: 70vh;
-    background: linear-gradient(to right, rgba(20,20,20,0.9) 20%, transparent 70%), 
-                url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=1600') no-repeat center center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 50px;
-    margin-bottom: 20px;
-}
-
-.hero-banner h2 {
-    font-size: 48px;
-    font-weight: 800;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-}
-
-.hero-banner p {
-    font-size: 18px;
-    max-width: 600px;
-    margin-bottom: 25px;
-    color: #cccccc;
-    line-height: 1.4;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-}
-
-/* --- CATÁLOGO E SEÇÕES --- */
-.container {
-    padding: 0 50px 50px 50px;
-    margin-top: -80px;
-    position: relative;
-    z-index: 10;
-}
-
-.categoria-secao {
-    margin-bottom: 40px;
-}
-
-.categoria-secao h2 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: #e5e5e5;
-}
-
-.cards-row {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    padding-bottom: 15px;
-    scroll-behavior: smooth;
-}
-
-.cards-row::-webkit-scrollbar {
-    height: 6px;
-}
-
-.cards-row::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 3px;
-}
-
-/* --- CARTÕES DE FILMES/SÉRIES --- */
-.media-card {
-    min-width: 220px;
-    width: 220px;
-    background: #181818;
-    border-radius: 6px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex-shrink: 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
-
-.media-card:hover {
-    transform: scale(1.08);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.8);
-    z-index: 20;
-}
-
-.media-card img {
-    width: 100%;
-    height: 310px;
-    object-fit: cover;
-}
-
-.media-card-info {
-    padding: 12px;
-}
-
-.media-card-info h3 {
-    font-size: 15px;
-    color: #fff;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-weight: 600;
-}
-
-/* --- PLAYER DE VÍDEO --- */
-.player-container {
-    max-width: 1000px;
-    margin: 100px auto 40px auto;
-    padding: 30px;
-    background: #181818;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.9);
-}
-
-.player-container h1 {
     font-size: 28px;
-    margin-bottom: 10px;
-    color: #fff;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-.player-container p {
-    color: #b3b3b3;
-    font-size: 15px;
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-video {
-    width: 100%;
-    max-height: 560px;
-    background: #000;
-    border-radius: 6px;
-    margin-top: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-}
-
-.audio-selector {
-    margin: 20px 0;
-    font-size: 15px;
-    color: #ccc;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.audio-selector select {
-    background: #333;
-    color: #fff;
-    border: 1px solid #555;
-    padding: 8px 14px;
+.header-center input {
+    width: 300px;
+    padding: 8px 15px;
+    background: #222;
+    border: 1px solid #444;
     border-radius: 4px;
-    cursor: pointer;
+    color: #fff;
     font-size: 14px;
+    transition: width 0.3s;
 }
 
-.back-btn {
-    display: inline-block;
-    margin-top: 25px;
-    background: #333;
-    color: #fff;
-    padding: 10px 22px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.2s;
+.header-center input:focus {
+    width: 380px;
+    outline: none;
+    border-color: #e50914;
 }
 
-.back-btn:hover {
-    background: #4a4a4a;
-}
-
-/* --- AUTENTICAÇÃO (LOGIN E CADASTRO) --- */
-.auth-body {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=1600') no-repeat center center fixed;
-    background-size: cover;
-    height: 100vh;
+.header-right {
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-.auth-container {
-    background-color: rgba(0, 0, 0, 0.85);
-    padding: 50px 60px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 450px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.9);
-}
-
-.auth-container h1 {
-    color: #e50914;
-    font-size: 36px;
-    margin-bottom: 10px;
-    font-weight: 900;
-}
-
-.auth-container h2 {
-    font-size: 24px;
-    margin-bottom: 25px;
-    color: #fff;
-}
-
-.auth-input {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 16px;
-    background: #333;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 16px;
-}
-
-.auth-input:focus {
-    outline: 2px solid #e50914;
-    background: #444;
-}
-
-.auth-btn {
-    width: 100%;
-    padding: 15px;
-    background-color: #e50914;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s;
-    margin-top: 10px;
-}
-
-.auth-btn:hover {
-    background-color: #f40612;
-}
-
-.auth-link {
-    margin-top: 25px;
-    color: #737373;
-    font-size: 15px;
-    text-align: center;
-}
-
-.auth-link a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.auth-link a:hover {
-    text-decoration: underline;
-}
-
-/* --- MODAL DE SAÍDA --- */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-}
-
-.modal-box {
-    background: #1f1f1f;
-    padding: 35px;
-    border-radius: 8px;
-    text-align: center;
-    max-width: 420px;
-    width: 90%;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.9);
-    border: 1px solid #333;
-}
-
-.modal-box h3 {
-    margin-bottom: 12px;
-    color: #fff;
-    font-size: 22px;
-}
-
-.modal-box p {
-    color: #b3b3b3;
-    margin-bottom: 25px;
-    font-size: 15px;
-}
-
-.modal-buttons {
-    display: flex;
-    justify-content: space-between;
     gap: 15px;
-}
-
-.btn-cancelar {
-    background: #333;
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    flex: 1;
-    font-weight: bold;
-    font-size: 15px;
-    transition: background 0.2s;
-}
-
-.btn-cancelar:hover {
-    background: #4a4a4a;
-}
-
-.btn-confirmar {
-    background: #e50914;
-    color: #fff;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    flex: 1;
-    display: inline-block;
-    font-weight: bold;
-    font-size: 15px;
-    transition: background 0.2s;
-}
-
-.btn-confirmar:hover {
-    background: #f40612;
+    font-size: 14px;
 }

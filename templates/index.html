@@ -9,8 +9,13 @@
 <body>
 
     <header>
-        <h1>PyFlix</h1>
-        <div class="user-perfil-box">
+        <div class="header-left">
+            <h1>PYFLIX</h1>
+        </div>
+        <div class="header-center">
+            <input type="text" id="searchInput" placeholder="Pesquisar filmes, séries..." onkeyup="filtrarCatalogo()">
+        </div>
+        <div class="header-right">
             <span>Olá, <strong>{{ usuario }}</strong></span>
             <button onclick="abrirModalSair()" class="logout-btn">Sair</button>
         </div>
@@ -31,6 +36,8 @@
     </div>
 
     <script>
+        let listaFilmesGlobal = [];
+
         function abrirModalSair() {
             document.getElementById('modal-sair').style.display = 'flex';
         }
@@ -42,46 +49,63 @@
             fetch('/static/data/catalog.json')
                 .then(response => response.json())
                 .then(filmes => {
-                    const container = document.getElementById("catalog-container");
-                    let categorias = {};
-                    
-                    filmes.forEach(filme => {
-                        if (!categorias[filme.categoria]) categorias[filme.categoria] = [];
-                        categorias[filme.categoria].push(filme);
-                    });
-
-                    for (const [cat, itens] of Object.entries(categorias)) {
-                        let secao = document.createElement("div");
-                        secao.classList.add("categoria-secao");
-                        secao.innerHTML = `<h2>${cat}</h2>`;
-                        
-                        let row = document.createElement("div");
-                        row.classList.add("cards-row");
-
-                        itens.forEach(filme => {
-                            let card = document.createElement("div");
-                            card.classList.add("media-card");
-                            card.innerHTML = `
-                                <img src="${filme.imagem}" alt="${filme.titulo}" onerror="this.src='https://via.placeholder.com/200x280?text=Sem+Imagem'">
-                                <div class="media-card-info"><h3>${filme.titulo}</h3></div>
-                            `;
-                            card.addEventListener("click", () => {
-                                const params = new URLSearchParams({
-                                    titulo: filme.titulo,
-                                    desc: filme.descricao,
-                                    video_pt: filme.video_pt,
-                                    video_en: filme.video_en
-                                });
-                                window.location.href = `/player?${params.toString()}`;
-                            });
-                            row.appendChild(card);
-                        });
-
-                        secao.appendChild(row);
-                        container.appendChild(secao);
-                    }
+                    listaFilmesGlobal = filmes;
+                    renderizarCatalogo(filmes);
                 });
         });
+
+        function renderizarCatalogo(filmes) {
+            const container = document.getElementById("catalog-container");
+            container.innerHTML = "";
+            let categorias = {};
+            
+            filmes.forEach(filme => {
+                if (!categorias[filme.categoria]) categorias[filme.categoria] = [];
+                categorias[filme.categoria].push(filme);
+            });
+
+            for (const [cat, itens] of Object.entries(categorias)) {
+                if (itens.length === 0) continue;
+                
+                let secao = document.createElement("div");
+                secao.classList.add("categoria-secao");
+                secao.innerHTML = `<h2>${cat}</h2>`;
+                
+                let row = document.createElement("div");
+                row.classList.add("cards-row");
+
+                itens.forEach(filme => {
+                    let card = document.createElement("div");
+                    card.classList.add("media-card");
+                    card.innerHTML = `
+                        <img src="${filme.imagem}" alt="${filme.titulo}" onerror="this.src='https://via.placeholder.com/200x280?text=Sem+Imagem'">
+                        <div class="media-card-info"><h3>${filme.titulo}</h3></div>
+                    `;
+                    card.addEventListener("click", () => {
+                        const params = new URLSearchParams({
+                            titulo: filme.titulo,
+                            desc: filme.descricao,
+                            video_pt: filme.video_pt,
+                            video_en: filme.video_en
+                        });
+                        window.location.href = `/player?${params.toString()}`;
+                    });
+                    row.appendChild(card);
+                });
+
+                secao.appendChild(row);
+                container.appendChild(secao);
+            }
+        }
+
+        function filtrarCatalogo() {
+            const termo = document.getElementById("searchInput").value.toLowerCase();
+            const filmesFiltrados = listaFilmesGlobal.filter(filme => 
+                filme.titulo.toLowerCase().includes(termo) || 
+                filme.categoria.toLowerCase().includes(termo)
+            );
+            renderizarCatalogo(filmesFiltrados);
+        }
     </script>
 </body>
 </html>
