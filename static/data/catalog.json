@@ -1,25 +1,25 @@
 [
   {
-    "titulo": "A 5ª Onda",
-    "descricao": "Quatro ondas de ataques mortais dizimaram grande parte da Terra. Na aurora da 5ª onda, Cassie tenta salvar o seu irmão num mundo de terror e desconfiança.",
+    "titulo": "A 5ª Onda (Local)",
+    "descricao": "Quatro ondas de ataques mortais dizimaram grande parte da Terra. Na aurora da 5ª onda, Cassie tenta salvar o seu irmão.",
     "categoria": "Meus Vídeos e Ficheiros Locais",
     "imagem": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500",
+    "video": "/static/videos/seu_video.mp4",
+    "legenda": "/static/videos/legenda.vtt",
+    "destaque": true
+  },
+  {
+    "titulo": "Trailer Oficial: Animação & Aventura",
+    "descricao": "Um conteúdo dinâmico incorporado diretamente do YouTube para enriquecer a sua plataforma híbrida.",
+    "categoria": "Destaques do YouTube",
+    "imagem": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
     "legenda": "",
     "destaque": true
   },
   {
-    "titulo": "Animais Fantásticos: Os Crimes de Grindelwald",
-    "descricao": "As aventuras mágicas do magizoologista Newt Scamander na luta contra o bruxo das trevas Gellert Grindelwald.",
-    "categoria": "Meus Vídeos e Ficheiros Locais",
-    "imagem": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
-    "legenda": "",
-    "destaque": false
-  },
-  {
-    "titulo": "Terminator 7",
-    "descricao": "Uma nova batalha épica pelo futuro da humanidade contra máquinas impiedosas e tecnologia avançada.",
+    "titulo": "Cyberpunk Chronicles",
+    "descricao": "Aventura alucinante nas ruas de uma megalópole iluminada por neon e alta tecnologia.",
     "categoria": "Ação e Ficção",
     "imagem": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
@@ -40,15 +40,6 @@
     "descricao": "Um homem comum decide aceitar e dizer 'sim' a todas as oportunidades e desafios que aparecem na sua vida.",
     "categoria": "Comédia",
     "imagem": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
-    "legenda": "",
-    "destaque": false
-  },
-  {
-    "titulo": "Terror no Rio",
-    "descricao": "Mergulhadores enfrentam perigos mortais e criaturas implacáveis nas profundezas das águas.",
-    "categoria": "Terror e Suspense",
-    "imagem": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
     "legenda": "",
     "destaque": false
