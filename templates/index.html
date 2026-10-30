@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PyFlix Web</title>
+    <title>PyFlix - Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -13,13 +13,25 @@
             <h1>PYFLIX</h1>
         </div>
         <div class="header-center">
-            <input type="text" id="searchInput" placeholder="Pesquisar filmes, séries..." onkeyup="filtrarCatalogo()">
+            <input type="text" id="searchInput" placeholder="Pesquisar filmes, séries, documentários..." onkeyup="filtrarCatalogo()">
         </div>
         <div class="header-right">
             <span>Olá, <strong>{{ usuario }}</strong></span>
             <button onclick="abrirModalSair()" class="logout-btn">Sair</button>
         </div>
     </header>
+
+    <!-- BANNER DE DESTAQUE ROTATIVO AUTOMÁTICO -->
+    <div class="hero-banner" id="heroBanner">
+        <div class="hero-content">
+            <span class="hero-badge">EM DESTAQUE</span>
+            <h2 id="heroTitle">Carregando...</h2>
+            <p id="heroDesc">Aproveite as melhores produções disponíveis na nossa plataforma.</p>
+            <div class="hero-buttons">
+                <button id="heroPlayBtn" class="btn-play">▶ Assistir Agora</button>
+            </div>
+        </div>
+    </div>
 
     <div class="container" id="catalog-container"></div>
 
@@ -37,6 +49,9 @@
 
     <script>
         let listaFilmesGlobal = [];
+        let destaquesGlobal = [];
+        let indexDestaque = 0;
+        let intervaloHero;
 
         function abrirModalSair() {
             document.getElementById('modal-sair').style.display = 'flex';
@@ -50,9 +65,39 @@
                 .then(response => response.json())
                 .then(filmes => {
                     listaFilmesGlobal = filmes;
+                    destaquesGlobal = filmes.filter(f => f.destaque);
+                    
+                    if(destaquesGlobal.length > 0) {
+                        atualizarHeroBanner();
+                        intervaloHero = setInterval(proximoHeroBanner, 6000);
+                    }
+                    
                     renderizarCatalogo(filmes);
                 });
         });
+
+        function atualizarHeroBanner() {
+            const filme = destaquesGlobal[indexDestaque];
+            const banner = document.getElementById('heroBanner');
+            banner.style.backgroundImage = `linear-gradient(to right, rgba(20,20,20,0.95) 30%, rgba(20,20,20,0.3) 70%), url('${filme.imagem}')`;
+            document.getElementById('heroTitle').textContent = filme.titulo;
+            document.getElementById('heroDesc').textContent = filme.descricao;
+            
+            const btnPlay = document.getElementById('heroPlayBtn');
+            btnPlay.onclick = () => {
+                const params = new URLSearchParams({
+                    titulo: filme.titulo,
+                    desc: filme.descricao,
+                    video: filme.video
+                });
+                window.location.href = `/player?${params.toString()}`;
+            };
+        }
+
+        function proximoHeroBanner() {
+            indexDestaque = (indexDestaque + 1) % destaquesGlobal.length;
+            atualizarHeroBanner();
+        }
 
         function renderizarCatalogo(filmes) {
             const container = document.getElementById("catalog-container");
@@ -85,7 +130,7 @@
                         const params = new URLSearchParams({
                             titulo: filme.titulo,
                             desc: filme.descricao,
-                            youtube_id: filme.youtube_id
+                            video: filme.video
                         });
                         window.location.href = `/player?${params.toString()}`;
                     });

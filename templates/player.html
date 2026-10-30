@@ -6,7 +6,7 @@
     <title>Assistir - PyFlix</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
+<body oncontextmenu="return false;" onkeydown="return bloquearAtalhos(event)">
 
     <header>
         <div class="header-left">
@@ -22,12 +22,13 @@
         <p id="desc"></p>
         
         <div class="audio-selector">
-            <span>💡 <strong>Opção de Legenda/Áudio:</strong> Utilize as configurações do player abaixo para ativar legendas ou tradução automática.</span>
+            <span>🛡️ <strong>Conteúdo Protegido:</strong> O download deste vídeo está desativado por razões de direitos autorais da plataforma.</span>
         </div>
 
-        <div class="video-wrapper">
-            <iframe id="youtube-player" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+        <!-- Video tag com controles mas sem controle de download nativo cru -->
+        <video id="meu-video" controls controlsList="nodownload noplaybackrate" disablePictureInPicture autoplay>
+            Seu navegador não suporta a tag de vídeo.
+        </video>
         
         <div>
             <a href="/" class="back-btn">Voltar ao Catálogo</a>
@@ -38,13 +39,21 @@
         const params = new URLSearchParams(window.location.search);
         const titulo = params.get("titulo");
         const desc = params.get("desc");
-        const youtubeId = params.get("youtube_id");
+        const videoUrl = params.get("video");
 
         document.getElementById("titulo").textContent = titulo;
         document.getElementById("desc").textContent = desc;
 
-        const iframe = document.getElementById("youtube-player");
-        iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&modestbranding=1&rel=0`;
+        const videoElement = document.getElementById("meu-video");
+        videoElement.src = videoUrl;
+
+        // Bloqueio de inspeção e atalhos de salvamento
+        function bloquearAtalhos(e) {
+            if (e.key === "F12" || (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || (e.ctrlKey && e.key === "s")) {
+                alert("Ação protegida e restrita pelo sistema PyFlix.");
+                return false;
+            }
+        }
     </script>
 </body>
 </html>

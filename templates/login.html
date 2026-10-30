@@ -14,10 +14,28 @@
         {% endif %}
         <form method="POST">
             <input type="email" name="email" placeholder="E-mail" required class="auth-input">
-            <input type="password" name="senha" placeholder="Senha" required class="auth-input">
+            
+            <div class="password-group">
+                <input type="password" id="senha" name="senha" placeholder="Senha" required class="auth-input">
+                <span class="toggle-password" onclick="toggleSenha('senha', this)">👁️</span>
+            </div>
+
             <button type="submit" class="auth-btn">Entrar</button>
         </form>
         <p class="auth-link">Novo por aqui? <a href="/cadastro">Cadastre-se agora</a>.</p>
     </div>
+
+    <script>
+        function toggleSenha(idInput, el) {
+            const input = document.getElementById(idInput);
+            if (input.type === "password") {
+                input.type = "text";
+                el.textContent = "🙈";
+            } else {
+                input.type = "password";
+                el.textContent = "👁️";
+            }
+        }
+    </script>
 </body>
 </html>

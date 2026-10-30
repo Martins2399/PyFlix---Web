@@ -15,14 +15,34 @@
         <form method="POST" onsubmit="return validarSenhas()">
             <input type="text" name="nome" placeholder="Nome completo" required class="auth-input">
             <input type="email" name="email" placeholder="E-mail" required class="auth-input">
-            <input type="password" id="senha" name="senha" placeholder="Criar senha" required class="auth-input">
-            <input type="password" id="confirma_senha" name="confirma_senha" placeholder="Confirme a senha" required class="auth-input">
+            
+            <div class="password-group">
+                <input type="password" id="senha" name="senha" placeholder="Criar senha" required class="auth-input">
+                <span class="toggle-password" onclick="toggleSenha('senha', this)">👁️</span>
+            </div>
+
+            <div class="password-group">
+                <input type="password" id="confirma_senha" name="confirma_senha" placeholder="Confirme a senha" required class="auth-input">
+                <span class="toggle-password" onclick="toggleSenha('confirma_senha', this)">👁️</span>
+            </div>
+
             <button type="submit" class="auth-btn">Cadastrar</button>
         </form>
         <p class="auth-link">Já tem conta? <a href="/login">Faça login</a>.</p>
     </div>
 
     <script>
+        function toggleSenha(idInput, el) {
+            const input = document.getElementById(idInput);
+            if (input.type === "password") {
+                input.type = "text";
+                el.textContent = "🙈";
+            } else {
+                input.type = "password";
+                el.textContent = "👁️";
+            }
+        }
+
         function validarSenhas() {
             const senha = document.getElementById('senha').value;
             const confirma = document.getElementById('confirma_senha').value;

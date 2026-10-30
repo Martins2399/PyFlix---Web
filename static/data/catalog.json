@@ -4,41 +4,55 @@
     "descricao": "Uma jornada fascinante pelos mistérios do universo e da ciência moderna.",
     "categoria": "Documentários",
     "imagem": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500",
-    "youtube_id": "0f_q-G7qE4M"
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "destaque": true
   },
   {
     "titulo": "Planeta Terra em Foco",
     "descricao": "Documentário incrível sobre a vida selvagem e os biomas do nosso planeta.",
     "categoria": "Documentários",
     "imagem": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500",
-    "youtube_id": "c8aDhhzb4kw"
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "destaque": false
+  },
+  {
+    "titulo": "Mistérios do Oceano Profundo",
+    "descricao": "Explore as profundezas desconhecidas e criaturas extraordinárias dos oceanos.",
+    "categoria": "Documentários",
+    "imagem": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500",
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "destaque": true
   },
   {
     "titulo": "Exterminador do Futuro",
     "descricao": "Clássico de ação e ficção científica futurista.",
     "categoria": "Ação",
     "imagem": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500",
-    "youtube_id": "kUNXeUSw4io"
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "destaque": false
   },
   {
     "titulo": "Cyberpunk Chronicles",
     "descricao": "Aventura alucinante nas ruas iluminadas por neon.",
     "categoria": "Ação",
     "imagem": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=500",
-    "youtube_id": "Lgni4i-1q20"
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "destaque": true
   },
   {
     "titulo": "Stranger Séries",
     "descricao": "Mistérios sobrenaturais e investigações nos anos 80.",
     "categoria": "Séries",
     "imagem": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500",
-    "youtube_id": "b9EkMc79ZSU"
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "destaque": false
   },
   {
     "titulo": "Rir Para Não Chorar",
     "descricao": "Comédia imperdível para toda a família.",
     "categoria": "Comédia",
     "imagem": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=500",
-    "youtube_id": "GCOnjBki4yI"
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "destaque": false
   }
 ]
