@@ -9,8 +9,11 @@
 <body>
 
     <header>
-        <h1>PyFlix</h1>
-        <div><span>Olá, Usuário</span></div>
+    <h1>PyFlix</h1>
+    <div class="user-perfil-box">
+        <span>Olá, <strong>{{ usuario }}</strong></span>
+        <a href="/logout" class="logout-btn">Sair</a>
+    </div>
     </header>
 
     <div class="container" id="catalog-container"></div>

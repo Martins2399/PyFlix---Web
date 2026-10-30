@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar - PyFlix</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="auth-body">
+    <div class="auth-container">
+        <h1>PyFlix</h1>
+        <h2>Entrar</h2>
+        
+        {% if erro %}
+            <p style="color: #e50914; margin-bottom: 15px; font-size: 14px;">{{ erro }}</p>
+        {% endif %}
+
+        <form method="POST">
+            <input type="email" name="email" placeholder="E-mail" required class="auth-input">
+            <input type="password" name="senha" placeholder="Senha" required class="auth-input">
+            <button type="submit" class="auth-btn">Entrar</button>
+        </form>
+        
+        <p class="auth-link">Novo por aqui? <a href="/cadastro">Cadastre-se agora</a>.</p>
+    </div>
+</body>
+</html>
