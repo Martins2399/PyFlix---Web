@@ -1,8 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3
+from datetime import timedelta
 
 app = Flask(__name__)
 app.secret_key = 'pyflix_chave_secreta_super_segura'
+
+# Configurar tempo de sessão para durar 30 dias caso o utilizador escolha "Lembrar-me"
+@app.before_request
+def make_session_permanent():
+    session.permanent = True
+    app.permanent_session_lifetime = timedelta(days=30)
 
 def init_db():
     conn = sqlite3.connect('pyflix.db')
@@ -66,6 +73,28 @@ def cadastro():
             return render_template('cadastro.html', erro="Este e-mail já está cadastrado.")
         
     return render_template('cadastro.html')
+
+@app.route('/recuperar', methods=['GET', 'POST'])
+def recuperar():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        nova_senha = request.form.get('nova_senha')
+        
+        conn = sqlite3.connect('pyflix.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM usuarios WHERE email = ?', (email,))
+        user = cursor.fetchone()
+        
+        if user:
+            cursor.execute('UPDATE usuarios SET senha = ? WHERE email = ?', (nova_senha, email))
+            conn.commit()
+            conn.close()
+            return render_template('login.html', erro="Senha alterada com sucesso! Faça login.")
+        else:
+            conn.close()
+            return render_template('recuperar.html', erro="E-mail não encontrado no sistema.")
+            
+    return render_template('recuperar.html')
 
 @app.route('/player')
 def player():
