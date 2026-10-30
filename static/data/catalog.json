@@ -1,7 +1,7 @@
 [
   {
     "titulo": "Cosmos: O Legado do Espaço",
-    "descricao": "Uma jornada fascinante pelos mistérios do universo e da ciência moderna.",
+    "descricao": "Uma jornada fascinante pelos mistérios do universo, estrelas e da ciência moderna.",
     "categoria": "Documentários",
     "imagem": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
@@ -9,7 +9,7 @@
   },
   {
     "titulo": "Planeta Terra em Foco",
-    "descricao": "Documentário incrível sobre a vida selvagem e os biomas do nosso planeta.",
+    "descricao": "Documentário incrível sobre a vida selvagem, florestas e os biomas do nosso planeta.",
     "categoria": "Documentários",
     "imagem": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
@@ -17,7 +17,7 @@
   },
   {
     "titulo": "Mistérios do Oceano Profundo",
-    "descricao": "Explore as profundezas desconhecidas e criaturas extraordinárias dos oceanos.",
+    "descricao": "Explore as fossas abissais e as criaturas mais misteriosas que habitam o fundo do mar.",
     "categoria": "Documentários",
     "imagem": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
@@ -25,7 +25,7 @@
   },
   {
     "titulo": "Exterminador do Futuro",
-    "descricao": "Clássico de ação e ficção científica futurista.",
+    "descricao": "Clássico de ação e ficção científica futurista sobre o destino da humanidade.",
     "categoria": "Ação",
     "imagem": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
@@ -33,25 +33,65 @@
   },
   {
     "titulo": "Cyberpunk Chronicles",
-    "descricao": "Aventura alucinante nas ruas iluminadas por neon.",
+    "descricao": "Aventura alucinante nas ruas de uma megalópole iluminada por neon e alta tecnologia.",
     "categoria": "Ação",
     "imagem": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
     "destaque": true
   },
   {
+    "titulo": "Velocidade Extrema",
+    "descricao": "Corridas clandestinas e muita adrenalina sob quatro rodas no limite da lei.",
+    "categoria": "Ação",
+    "imagem": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=500",
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "destaque": false
+  },
+  {
     "titulo": "Stranger Séries",
-    "descricao": "Mistérios sobrenaturais e investigações nos anos 80.",
+    "descricao": "Mistérios sobrenaturais, investigações intensas e segredos governamentais nos anos 80.",
     "categoria": "Séries",
     "imagem": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
     "destaque": false
   },
   {
+    "titulo": "O Último Hacker",
+    "descricao": "Uma série eletrizante sobre espionagem cibernética e segurança de dados globais.",
+    "categoria": "Séries",
+    "imagem": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500",
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "destaque": false
+  },
+  {
     "titulo": "Rir Para Não Chorar",
-    "descricao": "Comédia imperdível para toda a família.",
+    "descricao": "Comédia imperdível e cheia de gargalhadas para toda a família.",
     "categoria": "Comédia",
     "imagem": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=500",
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "destaque": false
+  },
+  {
+    "titulo": "Férias Frustradas no Espaço",
+    "descricao": "Uma viagem de turismo espacial que deu completamente errado de forma hilária.",
+    "categoria": "Comédia",
+    "imagem": "https://images.unsplash.com/photo-1517976487742-f9e9d8416c82?w=500",
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "destaque": false
+  },
+  {
+    "titulo": "Horror na Neblina",
+    "descricao": "Um grupo de viajantes fica preso numa cidade envolta por uma névoa mortal.",
+    "categoria": "Terror e Suspense",
+    "imagem": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500",
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "destaque": false
+  },
+  {
+    "titulo": "A Casa Silenciosa",
+    "descricao": "Fenómenos inexplicáveis começam a assombrar uma antiga mansão isolada.",
+    "categoria": "Terror e Suspense",
+    "imagem": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4",
     "destaque": false
   }
