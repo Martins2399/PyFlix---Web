@@ -1,14 +1,27 @@
 from flask import Flask, render_template, request, redirect, url_for, session
+import sqlite3
 
 app = Flask(__name__)
-app.secret_key = 'pyflix_secret_key_segura'  # Necessário para gerir sessões
+app.secret_key = 'pyflix_chave_secreta_super_segura'
 
-# Banco de dados simulado em memória para demonstração
-usuarios_db = {}
+def init_db():
+    conn = sqlite3.connect('pyflix.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS usuarios (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nome TEXT NOT NULL,
+            email TEXT UNIQUE NOT NULL,
+            senha TEXT NOT NULL
+        )
+    ''')
+    conn.commit()
+    conn.close()
+
+init_db()
 
 @app.route('/')
 def index():
-    # Se o utilizador não estiver logado, redireciona para a página de login/landing
     if 'usuario' not in session:
         return redirect(url_for('login'))
     return render_template('index.html', usuario=session['usuario'])
@@ -19,9 +32,14 @@ def login():
         email = request.form.get('email')
         senha = request.form.get('senha')
         
-        # Validação simples
-        if email in usuarios_db and usuarios_db[email]['senha'] == senha:
-            session['usuario'] = usuarios_db[email]['nome']
+        conn = sqlite3.connect('pyflix.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT nome FROM usuarios WHERE email = ? AND senha = ?', (email, senha))
+        user = cursor.fetchone()
+        conn.close()
+        
+        if user:
+            session['usuario'] = user[0]
             return redirect(url_for('index'))
         else:
             return render_template('login.html', erro="E-mail ou senha incorretos.")
@@ -35,12 +53,17 @@ def cadastro():
         email = request.form.get('email')
         senha = request.form.get('senha')
         
-        if email in usuarios_db:
-            return render_template('cadastro.html', erro="Este e-mail já está cadastrado.")
+        try:
+            conn = sqlite3.connect('pyflix.db')
+            cursor = conn.cursor()
+            cursor.execute('INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)', (nome, email, senha))
+            conn.commit()
+            conn.close()
             
-        usuarios_db[email] = {'nome': nome, 'senha': senha}
-        session['usuario'] = nome
-        return redirect(url_for('index'))
+            session['usuario'] = nome
+            return redirect(url_for('index'))
+        except sqlite3.IntegrityError:
+            return render_template('cadastro.html', erro="Este e-mail já está cadastrado.")
         
     return render_template('cadastro.html')
 

@@ -10,8 +10,17 @@
 
     <div class="player-container">
         <h1 id="titulo"></h1>
-        <p id="desc" style="color: #aaa; margin-bottom: 20px;"></p>
+        <p id="desc" style="color: #aaa; margin-bottom: 15px;"></p>
         
+        <!-- Seletor de Idioma de Áudio -->
+        <div class="audio-selector">
+            <label for="idioma-audio">Idioma do Áudio: </label>
+            <select id="idioma-audio" onchange="mudarIdiomaAudio()">
+                <option value="pt">Português (Dublado)</option>
+                <option value="en">English (Original)</option>
+            </select>
+        </div>
+
         <video id="meu-video" controls autoplay>
             Seu navegador não suporta a tag de vídeo.
         </video>
@@ -23,9 +32,30 @@
 
     <script>
         const params = new URLSearchParams(window.location.search);
-        document.getElementById("titulo").textContent = params.get("titulo");
-        document.getElementById("desc").textContent = params.get("desc");
-        document.getElementById("meu-video").src = params.get("video");
+        const titulo = params.get("titulo");
+        const desc = params.get("desc");
+        const videoPt = params.get("video_pt");
+        const videoEn = params.get("video_en");
+
+        document.getElementById("titulo").textContent = titulo;
+        document.getElementById("desc").textContent = desc;
+
+        const videoElement = document.getElementById("meu-video");
+        videoElement.src = videoPt;
+
+        function mudarIdiomaAudio() {
+            const idioma = document.getElementById("idioma-audio").value;
+            const tempoAtual = videoElement.currentTime;
+            
+            if (idioma === "en") {
+                videoElement.src = videoEn;
+            } else {
+                videoElement.src = videoPt;
+            }
+            
+            videoElement.currentTime = tempoAtual;
+            videoElement.play();
+        }
     </script>
 </body>
 </html>

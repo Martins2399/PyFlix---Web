@@ -1,37 +1,50 @@
 [
   {
-    "titulo": "Big Buck Bunny",
-    "descricao": "Uma animação clássica de comédia e aventura em 3D.",
-    "categoria": "Comédia",
-    "imagem": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4"
+    "titulo": "Cosmos: O Legado do Espaço",
+    "descricao": "Uma jornada fascinante pelos mistérios do universo e da ciência moderna.",
+    "categoria": "Documentários",
+    "imagem": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500",
+    "video_pt": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "video_en": "https://www.w3schools.com/html/mov_bbb.mp4"
+  },
+  {
+    "titulo": "Planeta Terra em Foco",
+    "descricao": "Documentário incrível sobre a vida selvagem e os biomas do nosso planeta.",
+    "categoria": "Documentários",
+    "imagem": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500",
+    "video_pt": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "video_en": "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     "titulo": "Exterminador do Futuro",
-    "descricao": "Filme clássico de ação e ficção científica futurista.",
+    "descricao": "Clássico de ação e ficção científica futurista.",
     "categoria": "Ação",
     "imagem": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4"
-  },
-  {
-    "titulo": "Stranger Séries (Ficção)",
-    "descricao": "Mistérios sombrios e aventuras nos anos 80.",
-    "categoria": "Ficção Científica",
-    "imagem": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4"
+    "video_pt": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "video_en": "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     "titulo": "Cyberpunk Chronicles",
-    "descricao": "Uma jornada alucinante pelas luzes de neon de uma cidade futurista.",
+    "descricao": "Aventura alucinante nas ruas iluminadas por neon.",
     "categoria": "Ação",
     "imagem": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4"
+    "video_pt": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "video_en": "https://www.w3schools.com/html/mov_bbb.mp4"
+  },
+  {
+    "titulo": "Stranger Séries",
+    "descricao": "Mistérios sobrenaturais e investigações nos anos 80.",
+    "categoria": "Séries",
+    "imagem": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500",
+    "video_pt": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "video_en": "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     "titulo": "Rir Para Não Chorar",
-    "descricao": "Uma comédia hilária para alegrar o seu dia.",
+    "descricao": "Comédia imperdível para toda a família.",
     "categoria": "Comédia",
     "imagem": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=500",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4"
+    "video_pt": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "video_en": "https://www.w3schools.com/html/mov_bbb.mp4"
   }
 ]

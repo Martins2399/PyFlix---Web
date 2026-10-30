@@ -9,16 +9,35 @@
 <body>
 
     <header>
-    <h1>PyFlix</h1>
-    <div class="user-perfil-box">
-        <span>Olá, <strong>{{ usuario }}</strong></span>
-        <a href="/logout" class="logout-btn">Sair</a>
-    </div>
+        <h1>PyFlix</h1>
+        <div class="user-perfil-box">
+            <span>Olá, <strong>{{ usuario }}</strong></span>
+            <button onclick="abrirModalSair()" class="logout-btn">Sair</button>
+        </div>
     </header>
 
     <div class="container" id="catalog-container"></div>
 
+    <!-- Modal de Confirmação de Saída -->
+    <div id="modal-sair" class="modal-overlay" style="display: none;">
+        <div class="modal-box">
+            <h3>Deseja realmente sair?</h3>
+            <p>Sua sessão será encerrada e você precisará entrar novamente.</p>
+            <div class="modal-buttons">
+                <button onclick="fecharModalSair()" class="btn-cancelar">Cancelar</button>
+                <a href="/logout" class="btn-confirmar">Sim, Sair</a>
+            </div>
+        </div>
+    </div>
+
     <script>
+        function abrirModalSair() {
+            document.getElementById('modal-sair').style.display = 'flex';
+        }
+        function fecharModalSair() {
+            document.getElementById('modal-sair').style.display = 'none';
+        }
+
         document.addEventListener("DOMContentLoaded", () => {
             fetch('/static/data/catalog.json')
                 .then(response => response.json())
@@ -43,11 +62,17 @@
                             let card = document.createElement("div");
                             card.classList.add("media-card");
                             card.innerHTML = `
-                                <img src="${filme.imagem}" alt="${filme.titulo}" onerror="this.src='https://via.placeholder.com/200x280?text=Erro+Imagem'">
+                                <img src="${filme.imagem}" alt="${filme.titulo}" onerror="this.src='https://via.placeholder.com/200x280?text=Sem+Imagem'">
                                 <div class="media-card-info"><h3>${filme.titulo}</h3></div>
                             `;
                             card.addEventListener("click", () => {
-                                window.location.href = `/player?titulo=${encodeURIComponent(filme.titulo)}&desc=${encodeURIComponent(filme.descricao)}&video=${encodeURIComponent(filme.video)}`;
+                                const params = new URLSearchParams({
+                                    titulo: filme.titulo,
+                                    desc: filme.descricao,
+                                    video_pt: filme.video_pt,
+                                    video_en: filme.video_en
+                                });
+                                window.location.href = `/player?${params.toString()}`;
                             });
                             row.appendChild(card);
                         });
