@@ -1,0 +1,23 @@
+[
+  {
+    "titulo": "Exterminador do Futuro 7",
+    "descricao": "Sinopse do filme de ação.",
+    "categoria": "Ação",
+    "imagem": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500",
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4"
+  },
+  {
+    "titulo": "A 5° Onda",
+    "descricao": "Sinopse do filme de ação e ficção.",
+    "categoria": "Ação",
+    "imagem": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500",
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4"
+  },
+  {
+    "titulo": "Minecraft: O Filme",
+    "descricao": "Sinopse do filme de comédia.",
+    "categoria": "Comédia",
+    "imagem": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=500",
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4"
+  }
+]

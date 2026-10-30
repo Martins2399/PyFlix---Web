@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyFlix Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>PyFlix</h1>
+        <div><span>Olá, Usuário</span></div>
+    </header>
+
+    <div class="container" id="catalog-container"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('/static/data/catalog.json')
+                .then(response => response.json())
+                .then(filmes => {
+                    const container = document.getElementById("catalog-container");
+                    let categorias = {};
+                    
+                    filmes.forEach(filme => {
+                        if (!categorias[filme.categoria]) categorias[filme.categoria] = [];
+                        categorias[filme.categoria].push(filme);
+                    });
+
+                    for (const [cat, itens] of Object.entries(categorias)) {
+                        let secao = document.createElement("div");
+                        secao.classList.add("categoria-secao");
+                        secao.innerHTML = `<h2>${cat}</h2>`;
+                        
+                        let row = document.createElement("div");
+                        row.classList.add("cards-row");
+
+                        itens.forEach(filme => {
+                            let card = document.createElement("div");
+                            card.classList.add("media-card");
+                            card.innerHTML = `
+                                <img src="${filme.imagem}" alt="${filme.titulo}" onerror="this.src='https://via.placeholder.com/200x280?text=Erro+Imagem'">
+                                <div class="media-card-info"><h3>${filme.titulo}</h3></div>
+                            `;
+                            card.addEventListener("click", () => {
+                                window.location.href = `/player?titulo=${encodeURIComponent(filme.titulo)}&desc=${encodeURIComponent(filme.descricao)}&video=${encodeURIComponent(filme.video)}`;
+                            });
+                            row.appendChild(card);
+                        });
+
+                        secao.appendChild(row);
+                        container.appendChild(secao);
+                    }
+                });
+        });
+    </script>
+</body>
+</html>
