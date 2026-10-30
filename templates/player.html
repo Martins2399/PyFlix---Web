@@ -8,22 +8,28 @@
 </head>
 <body>
 
+    <header>
+        <div class="header-left">
+            <h1>PYFLIX</h1>
+        </div>
+        <div class="header-right">
+            <a href="/" class="logout-btn" style="text-decoration: none;">Voltar ao Início</a>
+        </div>
+    </header>
+
     <div class="player-container">
         <h1 id="titulo"></h1>
         <p id="desc" style="color: #aaa; margin-bottom: 15px;"></p>
         
-        <!-- Seletor de Idioma de Áudio -->
+        <!-- Aviso sobre Legendas/Tradução do YouTube -->
         <div class="audio-selector">
-            <label for="idioma-audio">Idioma do Áudio: </label>
-            <select id="idioma-audio" onchange="mudarIdiomaAudio()">
-                <option value="pt">Português (Dublado)</option>
-                <option value="en">English (Original)</option>
-            </select>
+            <span>💡 <strong>Dica de Áudio/Legenda:</strong> Utilize as configurações do player do YouTube abaixo para ativar legendas ou tradução automática para Português/Inglês.</span>
         </div>
 
-        <video id="meu-video" controls autoplay>
-            Seu navegador não suporta a tag de vídeo.
-        </video>
+        <!-- Player do YouTube Integrado (Bloqueia Download nativamente) -->
+        <div class="video-wrapper">
+            <iframe id="youtube-player" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
         
         <div>
             <a href="/" class="back-btn">Voltar ao Catálogo</a>
@@ -34,28 +40,14 @@
         const params = new URLSearchParams(window.location.search);
         const titulo = params.get("titulo");
         const desc = params.get("desc");
-        const videoPt = params.get("video_pt");
-        const videoEn = params.get("video_en");
+        const youtubeId = params.get("youtube_id");
 
         document.getElementById("titulo").textContent = titulo;
         document.getElementById("desc").textContent = desc;
 
-        const videoElement = document.getElementById("meu-video");
-        videoElement.src = videoPt;
-
-        function mudarIdiomaAudio() {
-            const idioma = document.getElementById("idioma-audio").value;
-            const tempoAtual = videoElement.currentTime;
-            
-            if (idioma === "en") {
-                videoElement.src = videoEn;
-            } else {
-                videoElement.src = videoPt;
-            }
-            
-            videoElement.currentTime = tempoAtual;
-            videoElement.play();
-        }
+        // Configura a URL do iframe do YouTube com autoplay e controles limpos
+        const iframe = document.getElementById("youtube-player");
+        iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&modestbranding=1&rel=0`;
     </script>
 </body>
 </html>

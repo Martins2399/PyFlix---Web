@@ -78,15 +78,14 @@
                     let card = document.createElement("div");
                     card.classList.add("media-card");
                     card.innerHTML = `
-                        <img src="${filme.imagem}" alt="${filme.titulo}" onerror="this.src='https://via.placeholder.com/200x280?text=Sem+Imagem'">
+                        <img src="${filme.imagem}" alt="${filme.titulo}" onerror="this.src='https://via.placeholder.com/200x280?text=Sem+Capa'">
                         <div class="media-card-info"><h3>${filme.titulo}</h3></div>
                     `;
                     card.addEventListener("click", () => {
                         const params = new URLSearchParams({
                             titulo: filme.titulo,
                             desc: filme.descricao,
-                            video_pt: filme.video_pt,
-                            video_en: filme.video_en
+                            youtube_id: filme.youtube_id
                         });
                         window.location.href = `/player?${params.toString()}`;
                     });
